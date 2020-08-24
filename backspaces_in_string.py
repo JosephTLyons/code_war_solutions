@@ -4,6 +4,7 @@
 
 # Your task is to process a string with "#" symbols.
 
+
 def clean_string(s):
     letters = []
 

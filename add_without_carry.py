@@ -17,16 +17,12 @@ def add(num1, num2):
     number_one_list = [int(digit) for digit in str(num1)]
     number_two_list = [int(digit) for digit in str(num2)]
 
-    if len(number_one_list) > len(number_two_list):
-        larger_list = number_one_list
-        smaller_list = number_two_list
-    else:
-        larger_list = number_two_list
-        smaller_list = number_one_list
+    lists = [number_one_list, number_two_list]
+    lists.sort(key=lambda x: len(x))
 
-    while len(smaller_list) < len(larger_list):
-        smaller_list.insert(0, 0)
+    while len(lists[0]) < len(lists[1]):
+        lists[0].insert(0, 0)
 
-    sum_list_strings = [str(larger_list[i] + smaller_list[i]) for i in range(len(larger_list))]
+    sum_list_strings = [str(lists[0][i] + lists[1][i]) for i in range(len(lists[0]))]
 
     return int("".join(sum_list_strings))

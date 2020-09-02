@@ -28,11 +28,7 @@
 
 
 def base_finder(seq):
-    starting_length_of_num = len(seq[0])
-    base = 1
+    seq = [int(number) % 10 for number in seq]
+    seq.sort()
 
-    for num in seq:
-        if len(num) != starting_length_of_num:
-            return base
-
-        base += 1
+    return seq.pop() + 1

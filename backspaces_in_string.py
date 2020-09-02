@@ -12,7 +12,8 @@ def clean_string(s):
         character = s[i]
 
         if character == "#":
-            letters.pop()
+            if letters:
+                letters.pop()
         else:
             letters.append(character)
 

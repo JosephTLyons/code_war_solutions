@@ -15,6 +15,7 @@ def get_number_list(ip_address_string):
     numbers = ip_address_string.split(".")
     return [int(number) for number in numbers]
 
+
 def ips_between(start, end):
     start_numbers = get_number_list(start)
     end_numbers = get_number_list(end)

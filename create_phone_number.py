@@ -17,5 +17,6 @@ def create_phone_number(n):
 
     return "({}) {}-{}".format(first, second, third)
 
+
 def make_number_string(n):
     return "".join(str(num) for num in n)

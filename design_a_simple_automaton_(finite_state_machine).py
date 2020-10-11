@@ -45,37 +45,28 @@
 
 
 class Automaton(object):
-
     def __init__(self):
         pass
 
     def read_commands(self, commands):
         return self.q1(commands)
 
-    def q1(self, commands):
+    def base(self, commands, func_1, func_2, is_in_correct_end_state):
         if len(commands) == 0:
-            return False
+            return is_in_correct_end_state
 
         if int(commands.pop(0)) == 1:
-            return self.q2(commands)
+            return func_1(commands)
         else:
-            return self.q1(commands)
+            return func_2(commands)
+
+    def q1(self, commands):
+        return self.base(commands, self.q2, self.q1, False)
 
     def q2(self, commands):
-        if len(commands) == 0:
-            return True
-
-        if int(commands.pop(0)) == 0:
-            return self.q3(commands)
-        else:
-            return self.q2(commands)
+        return self.base(commands, self.q2, self.q3, True)
 
     def q3(self, commands):
-        if len(commands) == 0:
-            return False
-
-        commands.pop(0)
-
-        return self.q2(commands)
+        return self.base(commands, self.q2, self.q2, False)
 
 my_automaton = Automaton()

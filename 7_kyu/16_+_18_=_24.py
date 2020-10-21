@@ -10,8 +10,6 @@
 # You may assume both integers are positive integers and the result will not be bigger than
 # Integer.MAX_VALUE (only for java)
 
-# Note: The actual name of this Kata is 16 + 18 = 214
-
 
 def add(num1, num2):
     number_one_list = [int(digit) for digit in str(num1)]

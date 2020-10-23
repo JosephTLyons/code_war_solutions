@@ -9,15 +9,8 @@
 
 
 def accum(s):
-    string_list = []
-    count = 1
-
-    for letter in s:
-        string_list.append(letter.lower() * count)
-        count += 1
-
+    string_list = [letter.lower() * (count + 1) for count, letter in enumerate(s)]
     string_list = [string.title() for string in string_list]
-
     final_string = "-".join(string_list)
 
     return(final_string)

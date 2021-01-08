@@ -20,8 +20,6 @@ def even_binary(n):
         else:
             remaining_binary_strings.append(number_string)
 
-    print(remaining_binary_strings)
-
     even_binary_strings.sort(key=lambda even_binary_string: int(even_binary_string, 2))
     final_binary_string = " ".join(remaining_binary_strings)
 
